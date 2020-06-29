@@ -1,1 +1,1 @@
-# DART: DecentrAlized Role-based Trust management
+# :dart: DART: DecentrAlized Role-based Trust management

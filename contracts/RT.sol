@@ -74,6 +74,15 @@ contract RT {
         return members[exprId].insert(_member, _weight);
 	}
 
+    function removeSimpleMember(bytes2 _localRolename, address _member)
+            external {
+
+        bytes32 exprId = packExpr(msg.sender, _localRolename);
+        require(exprs[exprId].exprType == EXPR_SI, "local role does not exists");
+
+        members[exprId].remove(_member);
+	}
+
     function addSimpleInclusion(bytes2 _localRolename, address _principal, bytes2 _rolename, uint8 _weight)
             external returns(bool) {
 
