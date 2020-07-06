@@ -43,6 +43,7 @@ library Bytes32Set {
 	}
 
 	function get(Set storage self, uint _index) internal view returns(bytes32) {
+		require(_index >= 0 && _index < self.keyList.length, "out of bound");
 		return self.keyList[_index];
 	}
 
